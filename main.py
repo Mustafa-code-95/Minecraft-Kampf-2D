@@ -15,6 +15,12 @@ from ursina import held_keys
 import random
 import threading
 
+app = Ursina(title='Minecraft Dungeons fight 2D')
+
+window.borderless = False
+window.fullscreen = False
+window.size = (1500, 800)
+
 
 rid = 0
 score_thread_started = False
@@ -37,7 +43,6 @@ herzen = 10
 t = ['e', 'm', 'c', 'd']
 z = 0
 e = ['a', 'b', 'r.jpg', 's', 'f', 'g', 'q', 'k', 'l', 'o', 'p', 'z', 'y', 'v', 'rt', 'r.png', 'mob.gif']
-app = Ursina()
 boxes = []
 camera.orthographic = True
 camera.fov = 20
@@ -105,9 +110,9 @@ def update():
         score_thread_started = True
     if game_win == True and game_over == False:
         er += 1
-        for _ in range(30):
+        for _ in range(100):
             for mob in boxes:
-                mob.position += 1, 0 * time.dt * 3
+                mob.position += 1, 0 * time.dt * 0.7
         game_over_text.text = 'The victory\nYou have one min. survived\nClkick (q) for quit'
         if held_keys['q']:
             application.quit()
@@ -137,7 +142,7 @@ def update():
                     game_over = True
                     player.texture = mob.texture
     if game_over == True and game_win == False:
-        for _ in range(30):
+        for _ in range(100):
             for mob in boxes:
                 mob.position += direction * time.dt * 0.7
                 player.texture = mob.texture
