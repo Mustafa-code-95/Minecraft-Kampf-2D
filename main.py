@@ -1,4 +1,4 @@
-from ursina.prefabs.audio import Audio
+from ursina import *
 from ursina import camera
 from ursina import time
 from ursina import application
@@ -42,7 +42,7 @@ boxes = []
 camera.orthographic = True
 camera.fov = 20
 camera.position = 0, -3
-music = Audio('', loop=True, autoplay=True)
+music = Audio('sound.mp3', loop=True, autoplay=True)
 
 
 def random_name():
@@ -137,6 +137,7 @@ def update():
                     game_over = True
                     player.texture = mob.texture
     if game_over == True and game_win == False:
+        music.pause()
         for _ in range(30):
             for mob in boxes:
                 mob.position += direction * time.dt * 0.7
@@ -146,6 +147,7 @@ def update():
         if held_keys['q']:
             application.quit()
         if held_keys['r']:
+            music.()
             her.text = ''
             for mob in boxes:
                 boxes.remove(mob)
