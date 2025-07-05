@@ -1,3 +1,4 @@
+from ursina.prefabs.audio import Audio
 from ursina import camera
 from ursina import time
 from ursina import application
@@ -41,6 +42,7 @@ boxes = []
 camera.orthographic = True
 camera.fov = 20
 camera.position = 0, -3
+music = Audio('', loop=True, autoplay=True)
 
 
 def random_name():
