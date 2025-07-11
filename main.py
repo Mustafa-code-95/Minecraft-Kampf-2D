@@ -15,11 +15,7 @@ from ursina import held_keys
 import random
 import threading
 
-app = Ursina(title='Minecraft Dungeons fight 2D')
-
-window.borderless = False
-window.fullscreen = False
-window.size = (1500, 800)
+app = Ursina()
 
 
 rid = 0
