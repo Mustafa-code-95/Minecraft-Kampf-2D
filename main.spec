@@ -4,8 +4,8 @@
 a = Analysis(
     ['main.py'],
     pathex=[],
-    binaries=[],
-    datas=[],
+    binaries=[('/usr/lib/x86_64-linux-gnu/libpython3.11.so.1.0', '.')],
+    datas=[('/home/mustafa/.local/lib/python3.11/site-packages/ursina', 'ursina'), ('/home/mustafa/.local/lib/python3.11/site-packages/panda3d', 'panda3d')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,5 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['1.ico'],
+    icon=['icon.ico'],
 )
