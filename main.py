@@ -52,6 +52,7 @@ def random_name():
     kon = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
     name = f'{kon[random.randint(0, len(kon)-1)] + ran[random.randint(0, len(ran)-1)] + kon[random.randint(0, len(kon)-1)] + ran[random.randint(0, len(ran)-1)] + kon[random.randint(0, len(kon)-1)]}'
 
+
 her = Text('', origin=(0,6), scale=1.2, color=color.white)
 leben_text = Text('', origin=(0,2), scale=1.2, color=color.black)
 game_over_text = Text('', origin=(0,-1), scale=2.8, color=color.gray)
@@ -166,5 +167,6 @@ def update():
             rid = 0
     player.x = clamp(player.x, min_x + 0.5, max_x - 0.5)
     player.y = clamp(player.y, min_y + 0.5, max_y - 0.5)
+
 
 app.run()
