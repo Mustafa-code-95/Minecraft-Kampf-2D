@@ -1,3 +1,4 @@
+from panda3d.core import WindowProperties
 from ursina import Audio
 from ursina import camera
 from ursina import time
@@ -16,6 +17,14 @@ import random
 import threading
 
 app = Ursina()
+
+
+window.title = "Meine Ursina App"
+
+# Icon setzen (nur PNG, keine ICO-Dateien)
+props = WindowProperties()
+props.set_icon_filename("icon.png")  # Pfad zum Icon (PNG!)
+window.window.set_properties(props)
 
 
 rid = 0
