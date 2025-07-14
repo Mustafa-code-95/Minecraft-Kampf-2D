@@ -1,4 +1,3 @@
-from panda3d.core import WindowProperties
 from ursina import Audio
 from ursina import camera
 from ursina import time
@@ -17,14 +16,6 @@ import random
 import threading
 
 app = Ursina()
-
-
-window.title = "Meine Ursina App"
-
-# Icon setzen (nur PNG, keine ICO-Dateien)
-props = WindowProperties()
-props.set_icon_filename("icon.png")  # Pfad zum Icon (PNG!)
-window.window.set_properties(props)
 
 
 rid = 0
@@ -137,6 +128,7 @@ def update():
             direction = (player.position - mob.position).normalized()
             mob.position += direction * time.dt * d
             if player.intersects(mob).hit:
+                textured = mob.texture
                 her.text = f'{mob.name} hat dich erfolgreich an gegrifen.'
                 leben -= 1
                 leben_text.text = f"leben:{leben}"
@@ -146,7 +138,7 @@ def update():
                 if leben == 0:
                     her.text = f'{mob.name} hat dich erfolgreich erledigt.'
                     game_over = True
-                    player.texture = mob.texture
+                    player.texture = textured
     if game_over == True and game_win == False:
         for _ in range(100):
             for mob in boxes:
