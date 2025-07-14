@@ -15,7 +15,6 @@ from ursina import held_keys
 import random
 import threading
 
-
 app = Ursina()
 
 
