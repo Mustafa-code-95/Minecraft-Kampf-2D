@@ -1,0 +1,9 @@
+Package: minecraft-kampf-2d
+Version: 1.0
+Section: games
+Priority: optional
+Architecture: all
+Maintainer: Mustafa <mustafa@example.com>
+Depends: python3, python3-pip
+Description: Minecraft Kampf 2D – ein eigenes Spiel als Debian-Paket
+ Ein selbst erstelltes 2D-Kampfspiel, das mit Python und Ursina läuft.
