@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Minecraft Kampf 2D
-Comment=Starte das Minecraft Kampf 2D Spiel
-Exec=python3 /opt/main.py
-Icon=/opt/1.ico
+Comment=Click drauf um mehr zu erfahren
+Exec=python3 /opt/Minecraft-Kampf-2D/main.py
+Icon=/opt/Minecraft-Kampf-2D/1.ico
 Terminal=false
 Type=Application
 Categories=Game;
